@@ -6,11 +6,11 @@
 #    By: jkasongo <jkasongo@student.42quebec.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/14 08:39:50 by jkasongo          #+#    #+#              #
-#    Updated: 2022/12/14 08:41:24 by jkasongo         ###   ########.fr        #
+#    Updated: 2022/12/14 09:14:08 by jkasongo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME=Polymorphisme
+NAME=Poly
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 INCLUDES_DIR = includes/
