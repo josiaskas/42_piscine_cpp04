@@ -11,5 +11,15 @@ int main()
 	i->makeSound(); // will output the cat sound!
 	j->makeSound();
 	meta->makeSound();
+
+	// dynamic linking
+	Animal *dog = new Dog();
+	dog->makeSound();
+	delete dog;
+
+	delete meta;
+	delete j;
+	delete i;
+
 	return 0;
 }
