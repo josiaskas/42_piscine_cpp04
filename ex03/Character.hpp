@@ -6,7 +6,7 @@
 /*   By: jkasongo <jkasongo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 14:33:16 by jkasongo          #+#    #+#             */
-/*   Updated: 2022/12/15 14:33:55 by jkasongo         ###   ########.fr       */
+/*   Updated: 2022/12/15 15:42:22 by jkasongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include "AMateria.hpp"
 # include "ICharacter.hpp"
+# define INVENTORY_SIZE 4
 
 class Character : public ICharacter
 {
@@ -33,7 +34,7 @@ class Character : public ICharacter
 
 	private:
 		std::string _name;
-		AMateria *_inventory[4];
+		AMateria *_inventory[INVENTORY_SIZE];
 		int _inventoryCount;
 };
 
