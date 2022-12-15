@@ -6,7 +6,7 @@
 /*   By: jkasongo <jkasongo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 14:16:59 by jkasongo          #+#    #+#             */
-/*   Updated: 2022/12/15 17:22:37 by jkasongo         ###   ########.fr       */
+/*   Updated: 2022/12/15 18:17:01 by jkasongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ Character &Character::operator=(const Character &c)
 {
 	if (this == &c)
 		return (*this);
-	for (int i = 0; i < _inventoryCount; i++)
+	for (int i = 0; i < INVENTORY_SIZE; i++)
 	{
 		delete _inventory[i];
 		_inventory[i] = nullptr;
@@ -58,7 +58,7 @@ Character &Character::operator=(const Character &c)
 
 Character::~Character()
 {
-	for (int i = 0; i < _inventoryCount; i++)
+	for (int i = 0; i < INVENTORY_SIZE; i++)
 	{
 		delete _inventory[i];
 		_inventory[i] = nullptr;
@@ -74,16 +74,23 @@ void Character::equip(AMateria *m)
 {
 	if (_inventoryCount < INVENTORY_SIZE)
 	{
-		_inventory[_inventoryCount] = m;
+		for (int i = 0; i < INVENTORY_SIZE; i++)
+		{
+			if (_inventory[i] == nullptr)
+			{
+				_inventory[i] = m;
+				break;
+			}
+		}
 		_inventoryCount++;
 	}
 }
 
 void Character::unequip(int idx)
 {
-	if (idx < INVENTORY_SIZE)
+	if ((idx >= 0) && (idx < INVENTORY_SIZE))
 	{
-		_leftMateria[_leftMateriaCount] =  _inventory[idx];
+		_leftMateria[_leftMateriaCount] = _inventory[idx];
 		_leftMateriaCount++;
 		_inventory[idx] = nullptr;
 		_inventoryCount--;
@@ -93,5 +100,13 @@ void Character::unequip(int idx)
 void Character::use(int idx, ICharacter &target)
 {
 	if (idx < _inventoryCount)
-		_inventory[idx]->use(target);
+	{
+		if (_inventory[idx] != nullptr)
+			_inventory[idx]->use(target);
+	}
+}
+
+std::string const &Character::getName() const
+{
+	return (_name);
 }

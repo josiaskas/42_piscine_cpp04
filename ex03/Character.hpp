@@ -37,7 +37,7 @@ class Character : public ICharacter
 		AMateria *_inventory[INVENTORY_SIZE];
 		int _inventoryCount;
 		AMateria *_leftMateria[INVENTORY_SIZE * 50];
-		unsigned int _leftMateriaCount;
+		int _leftMateriaCount;
 };
 
 #endif
