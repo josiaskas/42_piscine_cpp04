@@ -6,7 +6,7 @@
 /*   By: jkasongo <jkasongo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 14:16:59 by jkasongo          #+#    #+#             */
-/*   Updated: 2022/12/15 14:30:25 by jkasongo         ###   ########.fr       */
+/*   Updated: 2022/12/15 17:22:37 by jkasongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,31 +14,60 @@
 
 Character::Character(): _name("Unknown"), _inventoryCount(0), _leftMateriaCount(0)
 {
+	for (size_t i = 0; i < INVENTORY_SIZE; i++)
+		_inventory[i] = nullptr;
 }
 
 Character::Character(const std::string &name):_name(name), _inventoryCount(0), _leftMateriaCount(0)
 {
-
+	for (size_t i = 0; i < INVENTORY_SIZE; i++)
+		_inventory[i] = nullptr;
 }
 
 Character::Character(const Character &c):_name(c._name), _inventoryCount(c._inventoryCount), _leftMateriaCount(c._leftMateriaCount)
 {
 	for (int i = 0; i < _inventoryCount; i++)
-	{
 		_inventory[i] = c._inventory[i]->clone();
-	}
+	for (int i = 0; i < _leftMateriaCount; i++)
+		_leftMateria[i] = c._leftMateria[i]->clone();
 }
 
-Character &Character::operator=(const Character &rhs)
+Character &Character::operator=(const Character &c)
 {
-	_name = rhs._name;
-	_inventoryCount = rhs._inventoryCount;
-	_leftMateriaCount = rhs._leftMateriaCount;
-
+	if (this == &c)
+		return (*this);
+	for (int i = 0; i < _inventoryCount; i++)
+	{
+		delete _inventory[i];
+		_inventory[i] = nullptr;
+	}
+	for (int i = 0; i < _leftMateriaCount; i++)
+	{
+		delete _leftMateria[i];
+		_leftMateria[i] = nullptr;
+	}
+	_name = c._name;
+	_inventoryCount = c._inventoryCount;
+	_leftMateriaCount = c._leftMateriaCount;
+	for (int i = 0; i < _inventoryCount; i++)
+		_inventory[i] = c._inventory[i]->clone();
+	for (int i = 0; i < _leftMateriaCount; i++)
+		_leftMateria[i] = c._leftMateria[i]->clone();
+	return (*this);
 }
 
 Character::~Character()
 {
+	for (int i = 0; i < _inventoryCount; i++)
+	{
+		delete _inventory[i];
+		_inventory[i] = nullptr;
+	}
+	for (int i = 0; i < _leftMateriaCount; i++)
+	{
+		delete _leftMateria[i];
+		_leftMateria[i] = nullptr;
+	}
 }
 
 void Character::equip(AMateria *m)
