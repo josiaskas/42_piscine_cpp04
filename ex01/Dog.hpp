@@ -6,7 +6,7 @@
 /*   By: jkasongo <jkasongo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 08:56:24 by jkasongo          #+#    #+#             */
-/*   Updated: 2022/12/15 12:27:38 by jkasongo         ###   ########.fr       */
+/*   Updated: 2022/12/15 13:50:49 by jkasongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Dog : public Animal
 	public:
 		Dog();
 		Dog(Dog const &dog);
-		~Dog();
+		virtual ~Dog();
 		Dog &operator=(Dog const &rhs);
 		void makeSound() const;
 	private	:

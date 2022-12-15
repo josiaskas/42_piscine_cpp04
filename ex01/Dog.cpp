@@ -6,7 +6,7 @@
 /*   By: jkasongo <jkasongo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 08:57:28 by jkasongo          #+#    #+#             */
-/*   Updated: 2022/12/15 13:42:41 by jkasongo         ###   ########.fr       */
+/*   Updated: 2022/12/15 13:48:03 by jkasongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,7 @@ Dog::Dog(Dog const &dog): Animal(dog), _brain(new Brain(*(dog._brain)))
 
 Dog::~Dog()
 {
-	if (_brain){
-		delete _brain;
-	}
+	delete _brain;
 	std::cout << "Dog destructor" << std::endl;
 }
 

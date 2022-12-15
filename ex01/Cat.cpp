@@ -6,7 +6,7 @@
 /*   By: jkasongo <jkasongo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 09:09:43 by jkasongo          #+#    #+#             */
-/*   Updated: 2022/12/15 13:43:02 by jkasongo         ###   ########.fr       */
+/*   Updated: 2022/12/15 13:48:15 by jkasongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,7 @@ Cat::Cat(Cat const &cat): Animal(cat), _brain(new Brain(*(cat._brain)))
 
 Cat::~Cat()
 {
-	if (_brain){
-		delete _brain;
-	}
+	delete _brain;
 	std::cout << "Cat destructor" << std::endl;
 }
 
