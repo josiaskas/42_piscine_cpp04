@@ -24,6 +24,7 @@ class Dog : public Animal
 		virtual ~Dog();
 		Dog &operator=(Dog const &rhs);
 		void makeSound() const;
+		const Brain *getBrain() const;
 	private	:
 		Brain *_brain;
 };
