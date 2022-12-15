@@ -6,7 +6,7 @@
 /*   By: jkasongo <jkasongo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 09:09:43 by jkasongo          #+#    #+#             */
-/*   Updated: 2022/12/15 12:33:32 by jkasongo         ###   ########.fr       */
+/*   Updated: 2022/12/15 13:43:02 by jkasongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,16 @@ Cat::Cat(): Animal("Cat"), _brain(new Brain())
 	std::cout << "Cat constructor" << std::endl;
 }
 
-Cat::Cat(Cat const &cat): Animal(cat), _brain(new Brain(*cat._brain))
+Cat::Cat(Cat const &cat): Animal(cat), _brain(new Brain(*(cat._brain)))
 {
 	std::cout << "Cat copy constructor" << std::endl;
 }
 
 Cat::~Cat()
 {
+	if (_brain){
+		delete _brain;
+	}
 	std::cout << "Cat destructor" << std::endl;
 }
 

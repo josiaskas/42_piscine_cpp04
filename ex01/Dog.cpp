@@ -6,30 +6,34 @@
 /*   By: jkasongo <jkasongo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 08:57:28 by jkasongo          #+#    #+#             */
-/*   Updated: 2022/12/14 09:07:46 by jkasongo         ###   ########.fr       */
+/*   Updated: 2022/12/15 13:42:41 by jkasongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog(): Animal("Dog")
+Dog::Dog(): Animal("Dog"), _brain(new Brain())
 {
 	std::cout << "Dog constructor" << std::endl;
 }
 
-Dog::Dog(Dog const &dog): Animal(dog)
+Dog::Dog(Dog const &dog): Animal(dog), _brain(new Brain(*(dog._brain)))
 {
 	std::cout << "Dog copy constructor" << std::endl;
 }
 
 Dog::~Dog()
 {
+	if (_brain){
+		delete _brain;
+	}
 	std::cout << "Dog destructor" << std::endl;
 }
 
 Dog &Dog::operator=(Dog const &rhs)
 {
 	_type = rhs._type;
+	_brain = rhs._brain;
 	return (*this);
 }
 
