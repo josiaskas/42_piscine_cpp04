@@ -12,7 +12,7 @@
 
 #include "Brain.hpp"
 
-Brian::Brian()
+Brain::Brain()
 {
 	for (size_t i = 0; i < 100; i++)
 	{
@@ -21,7 +21,7 @@ Brian::Brian()
 	std::cout << "Brain default constructor" << std::endl;
 }
 
-Brian::Brian(const Brian& brain)
+Brain::Brain(const Brain& brain)
 {
 	for (size_t i = 0; i < 100; i++)
 	{
@@ -30,12 +30,12 @@ Brian::Brian(const Brian& brain)
 	std::cout << "Brain copy constructor" << std::endl;
 }
 
-Brian::~Brian()
+Brain::~Brain()
 {
 	std::cout << "Brain destructor" << std::endl;
 }
 
-Brain &Brian::operator=(const Brain& rhs)
+Brain &Brain::operator=(const Brain& rhs)
 {
 	for (size_t i = 0; i < 100; i++)
 	{
