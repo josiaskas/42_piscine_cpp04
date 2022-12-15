@@ -20,7 +20,7 @@ class WrongAnimal
 {
 	public:
 		WrongAnimal();
-		WrongAnimal(const std::string &type);
+		explicit WrongAnimal(const std::string &type);
 		WrongAnimal(WrongAnimal const &wrongAnimal);
 		virtual ~WrongAnimal();
 
