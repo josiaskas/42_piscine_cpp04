@@ -15,13 +15,12 @@
 
 # include <iostream>
 # include <string>
-#include "ICharacter.hpp"
+# include "ICharacter.hpp"
 
 class AMateria
 {
 	protected:
 		std::string _type;
-		unsigned int _xp;
 
 	public:
 		AMateria();
@@ -32,7 +31,6 @@ class AMateria
 		AMateria &operator=(AMateria const &rhs);
 
 		std::string const &getType() const; // Returns the materia type
-		unsigned int getXP() const;			// Returns the Materia's XP
 
 		virtual AMateria *clone() const = 0;
 		virtual void use(ICharacter &target);

@@ -12,15 +12,15 @@
 
 #include "AMateria.hpp"
 
-AMateria::AMateria() : _type("default"), _xp(0)
+AMateria::AMateria() : _type("default")
 {
 }
 
-AMateria::AMateria(std::string const & type) : _type(type), _xp(0)
+AMateria::AMateria(std::string const & type) : _type(type)
 {
 }
 
-AMateria::AMateria(AMateria const & M) : _type(M._type), _xp(M._xp)
+AMateria::AMateria(AMateria const & M) : _type(M._type)
 {
 }
 
@@ -30,7 +30,6 @@ AMateria::~AMateria()
 
 AMateria &AMateria::operator=(AMateria const &rhs)
 {
-	_xp = rhs._xp;
 	_type = rhs._type;
 	return (*this);
 }
@@ -40,13 +39,8 @@ std::string const &AMateria::getType() const
 	return (_type);
 }
 
-unsigned int AMateria::getXP() const
-{
-	return (_xp);
-}
 
 void AMateria::use(ICharacter &target)
 {
 	(void)target;
-	_xp += 10;
 }

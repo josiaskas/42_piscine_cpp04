@@ -12,6 +12,7 @@
 
 #ifndef ICHARACTER_HPP
 # define ICHARACTER_HPP
+
 # include <iostream>
 # include <string>
 # include "AMateria.hpp"

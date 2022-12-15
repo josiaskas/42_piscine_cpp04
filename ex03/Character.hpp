@@ -14,7 +14,7 @@
 # define CHARACTER_HPP
 
 # include "AMateria.hpp"
-# include "ICharacter.hpp"
+
 # define INVENTORY_SIZE 4
 
 class Character : public ICharacter
@@ -36,6 +36,8 @@ class Character : public ICharacter
 		std::string _name;
 		AMateria *_inventory[INVENTORY_SIZE];
 		int _inventoryCount;
+		AMateria *_leftMateria[INVENTORY_SIZE * 50];
+		unsigned int _leftMateriaCount;
 };
 
 #endif
