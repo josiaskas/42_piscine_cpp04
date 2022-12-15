@@ -6,7 +6,7 @@
 /*   By: jkasongo <jkasongo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 14:13:22 by jkasongo          #+#    #+#             */
-/*   Updated: 2022/12/15 14:18:57 by jkasongo         ###   ########.fr       */
+/*   Updated: 2022/12/15 14:30:27 by jkasongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class AMateria
 	public:
 		AMateria();
 		AMateria(const std::string &type);
-		AMateria(AMateria const &materia);
+		AMateria(AMateria const &M);
 		virtual ~AMateria();
 
 		AMateria &operator=(AMateria const &rhs);

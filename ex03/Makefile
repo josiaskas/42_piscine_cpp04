@@ -6,7 +6,7 @@
 #    By: jkasongo <jkasongo@student.42quebec.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/14 08:39:50 by jkasongo          #+#    #+#              #
-#    Updated: 2022/12/15 14:20:03 by jkasongo         ###   ########.fr        #
+#    Updated: 2022/12/15 14:36:48 by jkasongo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ RED = \033[0;31m
 RESET_COLOR = \033[0m
 
 
-SRCS = main.cpp AMateria.cpp ICharacter.cpp Cure.cpp Ice.cpp MateriaSource.cpp
+SRCS = main.cpp AMateria.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp
 OBJFILES = $(SRCS:.cpp=.o)
 OBJS = $(addprefix $(OBJS_DIR), $(OBJFILES))
 
