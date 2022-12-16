@@ -6,7 +6,7 @@
 /*   By: jkasongo <jkasongo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 09:19:12 by jkasongo          #+#    #+#             */
-/*   Updated: 2022/12/16 12:04:53 by jkasongo         ###   ########.fr       */
+/*   Updated: 2022/12/16 12:22:27 by jkasongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class WrongAnimal
 {
 	public:
 		WrongAnimal();
-		explicit WrongAnimal(const std::string &type);
+		WrongAnimal(const std::string &type);
 		WrongAnimal(WrongAnimal const &wrongAnimal);
 		~WrongAnimal(); //only this destructor will be called, since no virtual
 
