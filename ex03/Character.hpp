@@ -12,7 +12,6 @@
 
 #ifndef CHARACTER_HPP
 # define CHARACTER_HPP
-
 # include "AMateria.hpp"
 
 # define INVENTORY_SIZE 4
