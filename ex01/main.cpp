@@ -31,6 +31,10 @@ int main()
 	else
 		std::cout << "Different brain !!"<< std::endl;
 
+	Dog basic;
+	{
+		Dog tmp = basic;
+	}
 	delete meta;
 	delete j;
 	delete i;
