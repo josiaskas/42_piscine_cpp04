@@ -21,6 +21,11 @@ int main()
 	dog->makeSound();
 	delete dog;
 
+	// // dynamic linking but with the wrong
+	// WrongAnimal *cat = new WrongCat();
+	// cat->makeSound(); //should print the wrongAnimal sound instead of WrongCat sound
+	// delete cat;
+
 	delete meta;
 	delete j;
 	delete i;

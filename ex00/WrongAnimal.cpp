@@ -6,7 +6,7 @@
 /*   By: jkasongo <jkasongo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 09:21:03 by jkasongo          #+#    #+#             */
-/*   Updated: 2022/12/14 09:22:41 by jkasongo         ###   ########.fr       */
+/*   Updated: 2022/12/16 12:09:48 by jkasongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ WrongAnimal::WrongAnimal():_type("WrongAnimal")
 
 WrongAnimal::WrongAnimal(const std::string &type):_type(type)
 {
-	std::cout << "WrongAnimal"<< _type << "constructor called" << std::endl;
+	std::cout << "WrongAnimal "<< _type << " constructor called" << std::endl;
 }
 
 WrongAnimal::WrongAnimal(const WrongAnimal& wrongAnimal):_type(wrongAnimal._type)

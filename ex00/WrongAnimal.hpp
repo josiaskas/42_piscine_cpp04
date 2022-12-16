@@ -6,7 +6,7 @@
 /*   By: jkasongo <jkasongo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 09:19:12 by jkasongo          #+#    #+#             */
-/*   Updated: 2022/12/14 09:26:13 by jkasongo         ###   ########.fr       */
+/*   Updated: 2022/12/16 12:04:53 by jkasongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ class WrongAnimal
 		WrongAnimal();
 		explicit WrongAnimal(const std::string &type);
 		WrongAnimal(WrongAnimal const &wrongAnimal);
-		virtual ~WrongAnimal();
+		~WrongAnimal(); //only this destructor will be called, since no virtual
 
 		WrongAnimal &operator=(WrongAnimal const &rhs);
-		virtual void makeSound() const;
+		void makeSound() const;  //no virtual to make it failed when there is dynamic linking
 		std::string getType() const;
 
 	protected:
