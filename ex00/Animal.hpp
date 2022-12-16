@@ -19,7 +19,7 @@ class Animal
 {
 	public:
 		Animal();
-		Animal(const std::string& type);
+		explicit Animal(const std::string& type);
 		Animal(Animal const &animal);
 		virtual ~Animal();
 
